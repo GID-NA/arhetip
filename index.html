@@ -103,7 +103,7 @@ return '<div class="tp"><span style="font-weight:500">Вопрос '+(i+1)+' и�
 function ticked(i,tk){return AR[i].t.map(function(t,k){return '<span class="ch'+(tk[k]?' on':'')+'">'+esc(t)+'</span>'}).join('')}
 function hero(i,tk,sc){
 var a=AR[i];
-return '<div class="cd" style="--h:'+a.h+'"><div class="hr"><span class="im ph" data-ic="'+a.ic+'"><img src="img/'+a.im+'.jpg" data-x="0" alt="Акварельная иллюстрация: '+esc(a.n)+'" width="1536" height="2048" decoding="async"></span><div class="hx"><div class="nm">'+esc(a.n)+'</div>'+(a.s?'<div style="font-size:14px">'+esc(a.s)+'</div>':'')
+return '<div class="cd" style="--h:'+a.h+'"><div class="hr"><span class="im ph" data-ic="'+a.ic+'"><img src="img/'+a.im+'.jpg" data-x="0" data-n="'+a.im+'" alt="Акварельная иллюстрация: '+esc(a.n)+'" width="1536" height="2048" decoding="async"></span><div class="hx"><div class="nm">'+esc(a.n)+'</div>'+(a.s?'<div style="font-size:14px">'+esc(a.s)+'</div>':'')
 +'<p class="mo">«'+esc(a.m)+'»</p><div class="lb">Качества · отмечено '+sc+' из 4</div><div class="chips">'+ticked(i,tk)+'</div></div></div></div>'}
 function small(i,tk,sc){
 var a=AR[i],ch=a.t.map(function(t,k){return tk[k]?'<span class="ch on">'+esc(t)+'</span>':''}).join('');
@@ -131,8 +131,8 @@ h+='<div class="nv" style="margin-top:18px"><button class="gh" data-a="again">П
 return h}
 function render(){vw.innerHTML=S.step<0?welcome():S.step<12?question():result()}
 function top(){try{root.scrollIntoView({block:'start'})}catch(e){}}
-var EXT=['jpg','jpeg','png','webp','JPG','JPEG','PNG'];
-root.addEventListener('error',function(e){var im=e.target;if(!im||im.tagName!=='IMG')return;var x=+im.getAttribute('data-x')+1;if(x<EXT.length){im.setAttribute('data-x',x);im.src=im.getAttribute('src').replace(/\.[A-Za-z]+$/,'.'+EXT[x]);return}var p=im.parentNode;p.className='im';p.innerHTML='<i class="ti ti-'+p.getAttribute('data-ic')+'" aria-hidden="true"></i>'},true);
+var EXT=['jpg','jpeg','png','webp','JPG','JPEG','PNG'],CAND=[];['img/',''].forEach(function(d){EXT.forEach(function(x){CAND.push(d+'|'+x)})});
+root.addEventListener('error',function(e){var im=e.target;if(!im||im.tagName!=='IMG')return;var x=+im.getAttribute('data-x')+1;if(x<CAND.length){var c=CAND[x].split('|');im.setAttribute('data-x',x);im.src=c[0]+im.getAttribute('data-n')+'.'+c[1];return}var p=im.parentNode;p.className='im';p.innerHTML='<i class="ti ti-'+p.getAttribute('data-ic')+'" aria-hidden="true"></i>'},true);
 root.addEventListener('click',function(e){
 var b=e.target.closest('[data-a]');if(!b)return;
 var a=b.getAttribute('data-a');
