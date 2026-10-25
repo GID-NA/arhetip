@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ваш архетип за 5 минут</title>
+<meta name="description" content="Короткий тест перед экскурсией: отметьте качества, которые про вас, и узнайте свой ведущий архетип.">
+<meta name="theme-color" content="#F1E6D8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.49.0/dist/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#F1E6D8;font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;min-height:100vh;padding:16px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+#qz{box-shadow:none}
+#qz{--bg:#FBF4EC;--ink:#4A3B33;--mut:#6F5D52;--line:#EADCCB;--co:#4E7D69;--coh:#3F6856;--con:#fff;--sel:#DDEBE3;--tr:#EFE3D6;--opb:#FFFDF9;--ghl:#D9C9B6;--dot:#CDB9A3;--abs:62%;--abl:89%;--aks:45%;--akl:22%;--aas:42%;--aal:48%;background:var(--bg);color:var(--ink);border-radius:20px;padding:20px;max-width:640px;margin:0 auto;line-height:1.5;font-size:15px}
+#qz *{box-sizing:border-box}
+#qz .tg{display:inline-block;background:#CFE3D9;color:#2E5547;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:500}
+#qz .h1{font-size:26px;font-weight:500;margin:14px 0 8px;line-height:1.25}
+#qz .h2{font-size:17px;font-weight:500;margin:22px 0 0}
+#qz .sb{color:var(--mut);margin:0 0 14px}
+#qz .lb0{font-size:12px;font-weight:500;color:var(--mut);margin:0 0 4px}
+#qz .rw{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+#qz .pl{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:6px 14px;font-size:14px}
+#qz button{font-family:inherit;font-size:15px;font-weight:500;min-height:44px;height:auto;border-radius:14px;padding:0 20px;cursor:pointer}
+#qz .bt{background:var(--co);color:var(--con);border:0}
+#qz .bt:hover{background:var(--coh)}
+#qz .gh{background:transparent;color:var(--ink);border:1.5px solid var(--ghl)}
+#qz .gh:hover{background:var(--tr)}
+#qz .tp{display:flex;justify-content:space-between;font-size:14px;color:var(--mut);margin-bottom:8px}
+#qz .bar{height:10px;background:var(--tr);border-radius:999px;overflow:hidden}
+#qz .bar i{display:block;height:100%;background:var(--co);border-radius:999px}
+#qz .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin:18px 0 16px}
+#qz .opt{position:relative;display:flex;align-items:center;gap:12px;background:var(--opb);border:1.5px solid var(--line);border-radius:16px;padding:14px 16px;min-height:60px;cursor:pointer;font-size:16px}
+#qz .opt.on{background:var(--sel);border-color:var(--co)}
+#qz .opt input{position:absolute;opacity:0;pointer-events:none}
+#qz .opt:focus-within{box-shadow:0 0 0 2px var(--co)}
+#qz .dot{width:24px;height:24px;border-radius:8px;border:2px solid var(--dot);display:flex;align-items:center;justify-content:center;flex:none;color:transparent}
+#qz .opt.on .dot{background:var(--co);border-color:var(--co);color:var(--con)}
+#qz .nv{display:flex;justify-content:space-between;gap:10px}
+#qz .cd{background:hsl(var(--h) var(--abs) var(--abl));color:hsl(var(--h) var(--aks) var(--akl));border-radius:20px;padding:18px;margin-top:12px}
+#qz .hr{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start}
+#qz .hx{flex:1 1 230px;min-width:0}
+#qz .hx .mo{margin-top:12px}
+#qz .im{width:96px;height:96px;border-radius:16px;background:hsl(var(--h) var(--abs) calc(var(--abl) - 7%));display:flex;align-items:center;justify-content:center;flex:none;font-size:46px;color:hsl(var(--h) var(--aas) var(--aal));overflow:hidden}
+#qz .im.ph{width:210px;height:280px;max-width:100%;border-radius:18px}
+#qz .im img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:520px){#qz .hr{justify-content:center}#qz .im.ph{width:min(260px,100%);height:auto;aspect-ratio:3/4;margin:0 auto}#qz .hx{flex-basis:100%}}
+#qz .qbd{width:44px;height:44px;border-radius:50%;background:hsl(var(--h) var(--aas) var(--aal));color:#fff;display:flex;align-items:center;justify-content:center;flex:none;font-size:22px}
+#qz .mi{width:30px;height:30px;border-radius:50%;background:hsl(var(--h) var(--aas) var(--aal));color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px}
+#qz .nm{font-size:22px;font-weight:500;line-height:1.2}
+#qz .mo{font-family:Georgia,'Times New Roman',serif;font-size:19px;margin:14px 0 0}
+#qz .lb{font-size:12px;font-weight:500;margin:14px 0 6px}
+#qz .chips{display:flex;flex-wrap:wrap;gap:8px}
+#qz .ch{background:rgba(255,255,255,.6);color:inherit;border-radius:999px;padding:5px 12px;font-size:14px}
+#qz .ch.on{background:hsl(var(--h) var(--aks) var(--akl));color:#fff}
+#qz .il{list-style:none;margin:0 0 14px;padding:0;color:var(--mut)}
+#qz .il li{position:relative;padding-left:20px;margin:0 0 5px}
+#qz .il li::before{content:"";position:absolute;left:4px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--co)}
+#qz .nt{font-size:13px;color:var(--mut);margin:14px 0 0}
+</style>
+</head>
+<body>
+<h1 class="sr-only">Тест «Ваш архетип за 5 минут»: 12 вопросов с множественным выбором, итог показывает три наиболее выраженных архетипа</h1>
+<div id="qz"></div>
+<script>
+(function(){
+var AR=[
+{n:'Дитя',m:'Жизнь прекрасна',t:['Беззаботный(ая)','Оптимистичный(ая)','Радостный(ая)','Непосредственный(ая)'],ic:'flower',h:46,im:'ditya'},
+{n:'Искатель',m:'Никто меня не остановит',t:['Любознательный(ая)','Мечтательный(ая)','Жажда нового','Авантюризм'],ic:'compass',h:200,im:'iskatel'},
+{n:'Мудрец / Философ',m:'Истина освобождает',t:['Аналитический склад ума','Наставник','Объективный(ая)','Интеллектуальный(ая)'],ic:'bulb',h:258,im:'mudrec'},
+{n:'Бунтарь / Революционер',m:'Правила созданы, чтобы их нарушать',t:['Независимый(ая)','Непокорный(ая)','Вдохновляю на перемены','Дерзкий(ая)'],ic:'flame',h:14,im:'buntar'},
+{n:'Маг / Волшебник',m:'Обыкновенное чудо',t:['Харизма','Артистизм','Люблю технические новинки','Проницательный(ая)'],ic:'wand',h:288,im:'mag'},
+{n:'Герой / Воин',m:'Победа любой ценой',t:['Смелый(ая)','Дисциплинированный(ая)','Целеустремленный(ая)','Настойчивый(ая)'],ic:'shield',h:355,im:'geroy'},
+{n:'Эстет / Любовник',m:'Миром правит любовь',t:['Романтичный(ая)','Эмоциональный(ая)','Любовь к красоте','Утонченный(ая)'],ic:'heart',h:330,im:'estet'},
+{n:'Шут',m:'Жизнь — это праздник',t:['Свободный(ая)','Чувство юмора','Спонтанный(ая)','Веселый(ая)'],ic:'mood-happy',h:172,im:'shut'},
+{n:'Славный малый',s:'Свой парень',m:'Все люди равны',t:['Общительный(ая)','Дружелюбный(ая)','Практичный(ая)','Надежный(ая)'],ic:'users',h:120,im:'slavnyj-malyj'},
+{n:'Опекун / Хранитель',m:'Возлюби ближнего',t:['Заботливый(ая)','Хозяйственный(ая)','Щедрый(ая)','На меня можно положиться'],ic:'home',h:28,im:'opekun'},
+{n:'Правитель',m:'Главное — контроль и порядок',t:['Упорядоченный(ая)','Организованный(ая)','Авторитетный(ая)','Лидер'],ic:'crown',h:226,im:'pravitel'},
+{n:'Творец',m:'Дерзай и создавай',t:['Креативный(ая)','Люблю инновации','Потребность в самовыражении','Стремление к совершенству'],ic:'palette',h:72,im:'tvorets'}
+];
+var Q=[[[3,0],[6,2],[5,0],[2,0]],[[11,0],[10,0],[2,2],[7,1]],[[10,1],[3,3],[1,2],[8,2]],[[1,1],[11,3],[0,3],[3,2]],[[9,2],[0,0],[10,3],[6,3]],[[4,0],[7,3],[3,1],[9,1]],[[2,1],[4,3],[9,0],[1,3]],[[6,0],[8,3],[11,1],[4,1]],[[8,0],[2,3],[7,0],[0,1]],[[0,2],[5,3],[4,2],[10,2]],[[5,1],[9,3],[8,1],[11,2]],[[7,2],[1,0],[6,1],[5,2]]];
+var root=document.getElementById('qz');
+root.innerHTML='<div id="vw"></div>';
+var vw=document.getElementById('vw');
+function fresh(){return Q.map(function(){return [false,false,false,false]})}
+var S={step:-1,ans:fresh()};
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function pl(n){var m=n%10,h=n%100;return m==1&&h!=11?'архетип':(m>=2&&m<=4&&(h<12||h>14))?'архетипа':'архетипов'}
+function nxl(i,any){return i==11?'Узнать результат':(any?'Дальше':'Пропустить')}
+function welcome(){
+var dots=AR.map(function(a){return '<span class="mi" style="--h:'+a.h+'"><i class="ti ti-'+a.ic+'" aria-hidden="true"></i></span>'}).join('');
+return '<span class="tg">Короткий тест</span><div class="h1">Ваш архетип за 5 минут</div><div class="rw" style="gap:6px">'+dots+'</div>'
++'<div class="lb0">Инструкция</div><ul class="il"><li>Отметьте характеристики, которые описывают вашу личность.</li><li>В каждом вопросе выберите всё, что про вас: подойдёт один вариант или несколько.</li><li>Неправильных ответов нет.</li><li>Если ничего не подходит — просто пропускаете вопрос.</li></ul>'
++'<div class="rw"><span class="pl" style="background:#CFE3D9;color:#2E5547"><i class="ti ti-list-check" aria-hidden="true"></i>12 вопросов</span><span class="pl" style="background:#FBDCCB;color:#7A3A22"><i class="ti ti-clock" aria-hidden="true"></i>около 5 минут</span><span class="pl" style="background:#FBEBB9;color:#5C4410"><i class="ti ti-star" aria-hidden="true"></i>без регистрации</span></div>'
++'<div class="nv"><button class="bt" data-a="start">Начать</button>'+(/[?&]demo\b/.test(location.search)?'<button class="gh" data-a="demo">Для проверки: заполнить случайно</button>':'')+'</div>'}
+function question(){
+var i=S.step,p=Math.round((i+1)/12*100);
+var o=Q[i].map(function(c,s){var on=S.ans[i][s];return '<label class="opt'+(on?' on':'')+'"><input type="checkbox" data-i="'+s+'"'+(on?' checked':'')+'><span class="dot"><i class="ti ti-check" aria-hidden="true"></i></span><span>'+esc(AR[c[0]].t[c[1]])+'</span></label>'}).join('');
+return '<div class="tp"><span style="font-weight:500">Вопрос '+(i+1)+' из 12</span><span>'+p+'%</span></div><div class="bar"><i style="width:'+p+'%"></i></div>'
++'<div class="opts">'+o+'</div>'
++'<div class="nv"><button class="gh" data-a="back">Назад</button><button class="bt" data-a="next">'+nxl(i,S.ans[i].some(Boolean))+'</button></div>'}
+function ticked(i,tk){return AR[i].t.map(function(t,k){return '<span class="ch'+(tk[k]?' on':'')+'">'+esc(t)+'</span>'}).join('')}
+function hero(i,tk,sc){
+var a=AR[i];
+return '<div class="cd" style="--h:'+a.h+'"><div class="hr"><span class="im ph" data-ic="'+a.ic+'"><img src="img/'+a.im+'.jpg" data-x="0" alt="Акварельная иллюстрация: '+esc(a.n)+'" width="1536" height="2048" decoding="async"></span><div class="hx"><div class="nm">'+esc(a.n)+'</div>'+(a.s?'<div style="font-size:14px">'+esc(a.s)+'</div>':'')
++'<p class="mo">«'+esc(a.m)+'»</p><div class="lb">Качества · отмечено '+sc+' из 4</div><div class="chips">'+ticked(i,tk)+'</div></div></div></div>'}
+function small(i,tk,sc){
+var a=AR[i],ch=a.t.map(function(t,k){return tk[k]?'<span class="ch on">'+esc(t)+'</span>':''}).join('');
+return '<div class="cd" style="--h:'+a.h+';padding:14px"><div style="display:flex;align-items:center;gap:12px"><span class="qbd"><i class="ti ti-'+a.ic+'" aria-hidden="true"></i></span><div style="flex:1"><div class="nm" style="font-size:18px">'+esc(a.n)+'</div><div style="font-size:14px">«'+esc(a.m)+'»</div></div><span style="font-size:13px">'+sc+' из 4</span></div><div class="chips" style="margin-top:10px">'+ch+'</div></div>'}
+function result(){
+var sc=AR.map(function(){return 0}),wt=AR.map(function(){return 0}),tk=AR.map(function(){return [false,false,false,false]});
+Q.forEach(function(row,q){
+var k=S.ans[q].filter(Boolean).length;if(!k)return;
+S.ans[q].forEach(function(on,s){if(on){var a=row[s][0];sc[a]++;wt[a]+=12/k;tk[a][row[s][1]]=true}})});
+var ord=AR.map(function(a,i){return i}).filter(function(i){return sc[i]>0}).sort(function(x,y){return sc[y]-sc[x]||wt[y]-wt[x]||x-y});
+var same=function(x,y){return sc[x]==sc[y]&&wt[x]==wt[y]};
+var h='<span class="tg">Ваш результат</span>';
+if(!ord.length){h+='<div class="h1">Пока без результата</div><p class="sb">Вы пропустили все вопросы, поэтому определить архетип не получилось. Пройдите тест ещё раз и отметьте то, что вам откликается.</p>'}
+else{
+var lead=ord.filter(function(i){return same(i,ord[0])});
+if(lead.length>3){h+='<div class="h1">Результат получился ровным</div><p class="sb">Сразу '+lead.length+' '+pl(lead.length)+' набрали одинаково. Пройдите тест ещё раз и отметьте только то, что точно про вас.</p>'}
+else{
+h+='<div class="h1">'+(lead.length==1?'Ваш ведущий архетип':'Ваши ведущие архетипы')+'</div>';
+h+=lead.map(function(i){return hero(i,tk[i],sc[i])}).join('');
+var rest=ord.slice(0,3).slice(lead.length);
+if(rest.length){h+='<div class="h2">Также вам близки</div>'+rest.map(function(i){return small(i,tk[i],sc[i])}).join('')}
+if(ord.length>3&&same(ord[2],ord[3])){h+='<p class="nt">У других архетипов баллов столько же, поэтому последнее место в тройке условное.</p>'}
+}}
+h+='<div class="nv" style="margin-top:18px"><button class="gh" data-a="again">Пройти заново</button></div>';
+return h}
+function render(){vw.innerHTML=S.step<0?welcome():S.step<12?question():result()}
+function top(){try{root.scrollIntoView({block:'start'})}catch(e){}}
+var EXT=['jpg','jpeg','png','webp','JPG','JPEG','PNG'];
+root.addEventListener('error',function(e){var im=e.target;if(!im||im.tagName!=='IMG')return;var x=+im.getAttribute('data-x')+1;if(x<EXT.length){im.setAttribute('data-x',x);im.src=im.getAttribute('src').replace(/\.[A-Za-z]+$/,'.'+EXT[x]);return}var p=im.parentNode;p.className='im';p.innerHTML='<i class="ti ti-'+p.getAttribute('data-ic')+'" aria-hidden="true"></i>'},true);
+root.addEventListener('click',function(e){
+var b=e.target.closest('[data-a]');if(!b)return;
+var a=b.getAttribute('data-a');
+if(a=='start'){S.step=0}
+else if(a=='back'){S.step=S.step-1}
+else if(a=='next'){S.step=S.step+1}
+else if(a=='again'){S.ans=fresh();S.step=-1}
+else if(a=='demo'){S.ans=Q.map(function(){return [0,0,0,0].map(function(){return Math.random()<.32})});S.step=12}
+render();top()});
+root.addEventListener('change',function(e){
+var t=e.target;if(!t.matches||!t.matches('input[data-i]'))return;
+S.ans[S.step][+t.getAttribute('data-i')]=t.checked;
+t.closest('.opt').classList.toggle('on',t.checked);
+var nx=root.querySelector('[data-a=next]');if(nx)nx.textContent=nxl(S.step,S.ans[S.step].some(Boolean))});
+render();
+})();
+</script>
+</body>
+</html>
